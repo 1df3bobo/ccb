@@ -1,0 +1,2 @@
+/Users/jiehuang/Desktop/ccb/ccb/android/app/.cxx/RelWithDebInfo/6b3a2v1p/x86/CMakeFiles/edit_cache.dir
+/Users/jiehuang/Desktop/ccb/ccb/android/app/.cxx/RelWithDebInfo/6b3a2v1p/x86/CMakeFiles/rebuild_cache.dir

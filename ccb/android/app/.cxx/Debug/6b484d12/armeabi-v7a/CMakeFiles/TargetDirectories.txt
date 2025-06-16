@@ -1,0 +1,2 @@
+/Users/jiehuang/Desktop/bank/ccb/ccb/android/app/.cxx/Debug/6b484d12/armeabi-v7a/CMakeFiles/edit_cache.dir
+/Users/jiehuang/Desktop/bank/ccb/ccb/android/app/.cxx/Debug/6b484d12/armeabi-v7a/CMakeFiles/rebuild_cache.dir
