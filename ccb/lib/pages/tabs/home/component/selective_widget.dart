@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:wb_base_widget/extension/widget_extension.dart';
 import 'package:wb_base_widget/text_widget/bank_text.dart';
+
+import '../../../../routes/app_pages.dart';
 
 class SelectiveWidget extends StatefulWidget {
   const SelectiveWidget({super.key});
@@ -11,6 +16,32 @@ class SelectiveWidget extends StatefulWidget {
 }
 
 class _SelectiveWidgetState extends State<SelectiveWidget> {
+
+
+
+  void jumpPage(String name){
+    if(name == '2' || name == '3' ){
+      Get.toNamed(Routes.changeNavPage, arguments: {
+        'title': '龙钱包2号',
+        'image': 'bg_lqb2h',
+        'defTitleColor': Colors.black
+      });
+    }
+
+    if(name == '财富活动'){
+      Get.toNamed(Routes.fixedNavPage, arguments: {
+        'title': name,
+        'image': 'cfhd_1',
+      });
+    }
+
+    if(name == '养老规划' ){
+      Get.toNamed(Routes.fixedNavPage, arguments: {
+        'title': name,
+        'image': 'ylgh_1',
+      });
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(padding: EdgeInsets.only(left: 12.w,right: 12.w,top: 15.w),
@@ -53,7 +84,9 @@ class _SelectiveWidgetState extends State<SelectiveWidget> {
                   width: 160.w,
                   height: 175.w,
                   imagePath: 'ic_home_selective_1',
-                ),),
+                ),).withOnTap(onTap: (){
+                  jumpPage('1');
+                }),
 
                 Column(
                   children: [
@@ -63,7 +96,9 @@ class _SelectiveWidgetState extends State<SelectiveWidget> {
                         height: 85.w,
                         imagePath: 'ic_home_selective_2',
                       ),
-                    ),
+                    ).withOnTap(onTap: (){
+                      jumpPage('2');
+                    }),
                     Padding(padding: EdgeInsets.only(left: 10.w),
                       child: _containerBg(
                         width: 160.w,
@@ -71,7 +106,9 @@ class _SelectiveWidgetState extends State<SelectiveWidget> {
                         fit: BoxFit.fitWidth,
                         imagePath: 'ic_home_selective_3',
                       ),
-                    ),
+                    ).withOnTap(onTap: (){
+                      jumpPage('3');
+                    }),
 
                   ],
                 )
@@ -83,19 +120,25 @@ class _SelectiveWidgetState extends State<SelectiveWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
 
-                  _tagWidget('ic_selective_tag_1', '财富体检'),
+                  _tagWidget('ic_selective_tag_1', '财富体检').withOnTap(onTap: (){
+                jumpPage('财富体检');
+              }),
                   Container(
                     width: 0.5.w,
                     height: 10.w,
                     color: const Color(0xff707070),
                   ),
-                  _tagWidget('ic_selective_tag_2', '财富体检'),
+                  _tagWidget('ic_selective_tag_2', '养老规划').withOnTap(onTap: (){
+                    jumpPage('养老规划');
+                  }),
                   Container(
                     width: 0.5.w,
                     height: 10.w,
                     color: const Color(0xff707070),
                   ),
-                  _tagWidget('ic_selective_tag_3', '财富体检'),
+                  _tagWidget('ic_selective_tag_3', '财富活动').withOnTap(onTap: (){
+                    jumpPage('财富活动');
+                  }),
                 ],
               ),
             )
@@ -111,6 +154,7 @@ class _SelectiveWidgetState extends State<SelectiveWidget> {
     return Row(
       children: [
         Image(image: path.png3x,width: 17.w,height: 17.w,),
+        SizedBox(width: 2.w,),
         BaseText(text: name,fontSize: 13.sp,)
       ],
     );

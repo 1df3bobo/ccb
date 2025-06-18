@@ -47,6 +47,7 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
         Get.toNamed(Routes.changeNavPage, arguments: {
           'title': '存款产品',
           'image': 'bg_ckcp',
+          'rightItem':'0'
         });
         return;
       case '基金投资':
