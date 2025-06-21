@@ -26,60 +26,27 @@ class _HomeHoseWidgetState extends State<HomeHoseWidget> {
                   children: [
                     Expanded(
                         child: Container(
-                      color: Colors.blue.withOpacity(0.2),
-                    ).withOnTap(onTap: () {
-                      // Get.toNamed(Routes.fixedNavPage, arguments: {
-                      //   'title': '主会场',
-                      //   'image': 'cfhd_1',
-                      // });
-                    })),
+                    ).withOnTap(onTap: () {})),
                     Expanded(
                         child: Container(
-                      color: Colors.red.withOpacity(0.2),
-                    ).withOnTap(onTap: () {
-                      // Get.toNamed(Routes.changeNavPage, arguments: {
-                      //   'title': '',
-                      //   'image': 'honme_hsq',
-                      // });
-                    },),),
+                    ).withOnTap(onTap: () {},),),
                   ],
                 ),
               ),
               Container(
                 width: 1.sw,
                 height: 65.w,
-                color: Colors.purpleAccent.withOpacity(0.2),
                 child: Row(
                   children: [
                     Expanded(
-                      child: Container(
-                        color: Colors.red.withOpacity(0.2),
-                      ).withOnTap(onTap: () {
-                        // Get.toNamed(Routes.changeNavPage, arguments: {
-                        //   'title': '',
-                        //   'image': 'honme_hsq',
-                        // });
-                      },),),
+                      child: Container().withOnTap(onTap: () {},),),
+
+                    Expanded(
+                      child: Container().withOnTap(onTap: () {},),),
 
                     Expanded(
                       child: Container(
-                        color: Colors.yellow.withOpacity(0.2),
-                      ).withOnTap(onTap: () {
-                        // Get.toNamed(Routes.changeNavPage, arguments: {
-                        //   'title': '',
-                        //   'image': 'honme_hsq',
-                        // });
-                      },),),
-
-                    Expanded(
-                      child: Container(
-                        color: Colors.red.withOpacity(0.2),
-                      ).withOnTap(onTap: () {
-                        // Get.toNamed(Routes.changeNavPage, arguments: {
-                        //   'title': '',
-                        //   'image': 'honme_hsq',
-                        // });
-                      },),),
+                      ).withOnTap(onTap: () {},),),
                   ],
                 ),
               )
