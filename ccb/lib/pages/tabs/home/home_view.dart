@@ -1,6 +1,7 @@
 import 'package:ccb/pages/tabs/home/component/ad_banner_widget.dart';
 import 'package:ccb/pages/tabs/home/component/function_banner_widget.dart';
 import 'package:ccb/pages/tabs/home/component/home_account_widget.dart';
+import 'package:ccb/pages/tabs/home/component/home_bottom_widget.dart';
 import 'package:ccb/pages/tabs/home/component/home_life_widget.dart';
 import 'package:ccb/pages/tabs/home/component/home_notice_widget.dart';
 import 'package:ccb/pages/tabs/home/component/home_yanglao_widget.dart';
@@ -62,7 +63,7 @@ class HomePage extends BaseStateless {
   @override
   Widget initBody(BuildContext context) {
     return Container(
-      color: const Color(0xffF6FCFF),
+      color: const Color(0xffF2FBFD),
       child: ListView(
         padding: EdgeInsets.zero,
         children: const [
@@ -73,8 +74,9 @@ class HomePage extends BaseStateless {
           SelectiveWidget(),
           HomeAccountWidget(),
           HomeYangLaoWidget(),
-          HomeLifeWidget(),
           HomeHoseWidget(),
+          HomeLifeWidget(),
+          HomeBottomWidget(),
         ],
       ),
     );

@@ -13,40 +13,78 @@ class HomeHoseWidget extends StatefulWidget {
 class _HomeHoseWidgetState extends State<HomeHoseWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(left: 0.w, right: 0.w),
-      child: _containerBg(
-        width: 350.w,
-        height: 425.w,
-        imagePath: 'bg_home_hose',
-        // child: Expanded(
-        //   child: Container(
-        //     child: Column(
-        //       children: [
-        //         SizedBox(
-        //           height: 130.w,
-        //         ),
-        //         Container(
-        //           width: 1.sw,
-        //           height: 80.w,
-        //           child: Row(
-        //             children: [
-        //               Expanded(
-        //                   child: Container(
-        //                 color: Colors.red.withOpacity(0.2),
-        //               )),
-        //               Expanded(
-        //                   child: Container(
-        //                 color: Colors.yellow.withOpacity(0.2),
-        //               )),
-        //             ],
-        //           ),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
-        // ),
-      ),
+    return _containerBg(
+      width: 375.w,
+      height: 284.w,
+      imagePath: 'bg_home_hose',
+      child: Container(
+          padding: EdgeInsets.only(top: 100.w, bottom: 15.w,left: 15.w,right: 15.w,),
+          child: Column(
+            children: [
+              Expanded(
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Container(
+                      color: Colors.blue.withOpacity(0.2),
+                    ).withOnTap(onTap: () {
+                      // Get.toNamed(Routes.fixedNavPage, arguments: {
+                      //   'title': '主会场',
+                      //   'image': 'cfhd_1',
+                      // });
+                    })),
+                    Expanded(
+                        child: Container(
+                      color: Colors.red.withOpacity(0.2),
+                    ).withOnTap(onTap: () {
+                      // Get.toNamed(Routes.changeNavPage, arguments: {
+                      //   'title': '',
+                      //   'image': 'honme_hsq',
+                      // });
+                    },),),
+                  ],
+                ),
+              ),
+              Container(
+                width: 1.sw,
+                height: 65.w,
+                color: Colors.purpleAccent.withOpacity(0.2),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+                        color: Colors.red.withOpacity(0.2),
+                      ).withOnTap(onTap: () {
+                        // Get.toNamed(Routes.changeNavPage, arguments: {
+                        //   'title': '',
+                        //   'image': 'honme_hsq',
+                        // });
+                      },),),
+
+                    Expanded(
+                      child: Container(
+                        color: Colors.yellow.withOpacity(0.2),
+                      ).withOnTap(onTap: () {
+                        // Get.toNamed(Routes.changeNavPage, arguments: {
+                        //   'title': '',
+                        //   'image': 'honme_hsq',
+                        // });
+                      },),),
+
+                    Expanded(
+                      child: Container(
+                        color: Colors.red.withOpacity(0.2),
+                      ).withOnTap(onTap: () {
+                        // Get.toNamed(Routes.changeNavPage, arguments: {
+                        //   'title': '',
+                        //   'image': 'honme_hsq',
+                        // });
+                      },),),
+                  ],
+                ),
+              )
+            ],
+          )),
     );
   }
 
@@ -61,15 +99,7 @@ class _HomeHoseWidgetState extends State<HomeHoseWidget> {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.w),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xffF6FCFF).withOpacity(0.2),
-            blurRadius: 12,
-            spreadRadius: 0.5,
-            offset: const Offset(0, 1),
-          ),
-        ],
+        color: const Color(0xffF2FBFD),
         image: DecorationImage(
           image: imagePath.png3x,
           fit: fit,

@@ -78,15 +78,16 @@ class _HomeYangLaoWidgetState extends State<HomeYangLaoWidget> {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(12.w),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xffF6FCFF).withOpacity(0.2),
-            blurRadius: 12,
-            spreadRadius: 0.5,
-            offset: const Offset(0, 1),
-          ),
-        ],
+        color: const Color(0xffF2FBFD),
+        // borderRadius: BorderRadius.circular(12.w),
+        // boxShadow: [
+        //   BoxShadow(
+        //     color: const Color(0xffF6FCFF).withOpacity(0.2),
+        //     blurRadius: 12,
+        //     spreadRadius: 0.5,
+        //     offset: const Offset(0, 1),
+        //   ),
+        // ],
         image: DecorationImage(
           image: imagePath.png3x,
           fit: fit,
