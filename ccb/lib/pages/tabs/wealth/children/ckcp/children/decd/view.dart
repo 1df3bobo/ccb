@@ -1,4 +1,5 @@
 import 'package:ccb/utils/screen_util.dart';
+import 'package:ccb/utils/string_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -91,11 +92,27 @@ class DecdView extends BaseStateless {
         // 内容区域
         Expanded(
           child: Obx(() => SingleChildScrollView(
-            child: Image.asset(
-              state.tabImages[logic.selectedIndex.value],
-              width: double.infinity,
-              fit: BoxFit.fitWidth,
-            ),
+              child: Stack(
+                  alignment: Alignment.centerLeft,
+                  children: [
+                    Image.asset(
+                      state.tabImages[logic.selectedIndex.value],
+                      width: double.infinity,
+                      fit: BoxFit.fitWidth,
+                    ),
+                    Positioned(
+                      top: screenWidth / 1125 * 2058 * 0.028,
+                      left: screenWidth  * 0.38,
+                      child: Text(
+                        formatBankCard(0),
+                        style: TextStyle(
+                          fontSize: 13.sp,
+                          color: Colors.black.withAlpha(80),
+                        ),
+                      ),
+                    )
+                  ]
+              )
           )),
         ),
       ],

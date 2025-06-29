@@ -1,3 +1,6 @@
+import 'package:ccb/config/app_config.dart';
+import 'package:ccb/utils/screen_util.dart';
+import 'package:ccb/utils/string_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -30,9 +33,26 @@ class PhoneFeePage extends BaseStateless {
   @override
   Widget initBody(BuildContext context) {
     return SingleChildScrollView(
-      child: Image.asset(
-        'assets/new_images/life/children/phone_fee.png',
-        fit: BoxFit.fitWidth,
+      child: Stack(
+        children: [
+          Image.asset(
+            'assets/new_images/life/children/phone_fee.png',
+            fit: BoxFit.fitWidth,
+          ),
+          Positioned(
+            top: screenWidth/1125 * 2319 * 0.066,
+            left: screenWidth * 0.05,
+            child: Container(
+              child: Text(
+                formatPhoneNumber(AppConfig.config.balanceLogic.memberInfo.phone),
+                style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.normal
+                ),
+              ),
+            ),
+          )
+        ],
       ),
     );
   }

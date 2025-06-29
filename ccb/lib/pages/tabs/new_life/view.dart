@@ -1,3 +1,4 @@
+import 'package:ccb/config/app_config.dart';
 import 'package:ccb/utils/screen_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -132,7 +133,7 @@ class NewLifePage extends BaseStateless {
           children: [
             Image(image: 'card/location_icon'.png, width: 14.w, height: 16.h),
             SizedBox(width: 4.w),
-            const Text('北京', style: TextStyle(fontSize: 15, color: Colors.black87, fontWeight: FontWeight.w500)),
+            Text(AppConfig.config.balanceLogic.memberInfo.city, style: TextStyle(fontSize: 15, color: Colors.black87, fontWeight: FontWeight.w500)),
           ],
         ),
         SizedBox(width: 12.w),
