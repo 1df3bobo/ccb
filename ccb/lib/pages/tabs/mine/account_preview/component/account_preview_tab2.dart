@@ -287,7 +287,7 @@ class _AccountPreviewTab2State extends State<AccountPreviewTab2> {
                   BaseText(
                     text: '查看卡号',
                     fontSize: 12.sp,
-                    color: Colors.blue,
+                    color: const Color(0xff5489F0),
                   ).withOnTap(onTap: () {
                     SmartDialog.show(
                       usePenetrate: false,
@@ -321,6 +321,7 @@ class _AccountPreviewTab2State extends State<AccountPreviewTab2> {
                                       text: '中国建设银行股份有限公司${infoModel.branchBelongs}',
                                       maxLines: 5,
                                       fontSize: 14.sp,
+                                      textAlign: TextAlign.center,
                                     ).withPadding(
                                       left: 24.w,right: 24.w,
                                     ),

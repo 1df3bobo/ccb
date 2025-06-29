@@ -110,6 +110,7 @@ class DetailInfoPage extends BaseStateless {
     }
 
     return Text.rich(
+      maxLines: 10,
       TextSpan(children: spans),
     );
   }
@@ -192,7 +193,10 @@ class DetailInfoPage extends BaseStateless {
                               ),
                             ),
                             if(state.nameLis[index] == '交易账户' || state.nameLis[index] == '对方账户')
-                              replaceAsterisksWithImages(logic.valueName(state.nameLis[index])),
+                              replaceAsterisksWithImages(logic.valueName(state.nameLis[index])).withContainer(
+                                alignment: Alignment.centerRight,
+                                width:  220.w,
+                              ),
 
                             if(state.nameLis[index] != '交易账户' && state.nameLis[index] != '对方账户')
                               BaseText(

@@ -98,7 +98,7 @@ class CardDetailPage extends BaseStateless {
                                 BaseText(
                                   text: '查看卡号',
                                   fontSize: 12.sp,
-                                  color: Colors.blue,
+                                  color: const Color(0xff5489F0),
                                 ).withOnTap(onTap: () {
                                   SmartDialog.show(
                                     usePenetrate: false,
@@ -131,8 +131,9 @@ class CardDetailPage extends BaseStateless {
                                                   ),
                                                   SizedBox(height: 10.w,),
                                                   BaseText(
-                                                    text: '中国建设银行股份有限公司${state.infoModel.branchBelongs}',
+                                                    text: state.infoModel.branchBelongs,
                                                     maxLines: 5,
+                                                    textAlign: TextAlign.center,
                                                     fontSize: 14.sp,
                                                   ).withPadding(
                                                     left: 24.w,right: 24.w,

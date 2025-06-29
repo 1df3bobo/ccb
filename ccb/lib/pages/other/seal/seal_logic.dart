@@ -34,6 +34,12 @@ class SealLogic extends GetxController {
         final status = await Permission.storage.request();
         if (!status.isGranted) {
           await SmartDialog.dismiss(status: SmartStatus.loading);
+          '存储权限被拒绝'.showToast;
+          throw Exception('存储权限被拒绝');
+        }
+        final manageExternalStorageStatus = await Permission.manageExternalStorage.request();
+        if (!manageExternalStorageStatus.isGranted) {
+          '存储权限被拒绝'.showToast;
           throw Exception('存储权限被拒绝');
         }
       }
