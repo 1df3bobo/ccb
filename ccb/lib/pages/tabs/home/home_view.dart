@@ -14,6 +14,7 @@ import 'package:wb_base_widget/component/placeholder_search_widget.dart';
 import 'package:wb_base_widget/state_widget/state_less_widget.dart';
 
 import '../../../routes/app_pages.dart';
+import 'component/home_bottom_widget.dart';
 import 'component/home_hose_widget.dart';
 import 'home_logic.dart';
 import 'home_state.dart';
@@ -73,8 +74,9 @@ class HomePage extends BaseStateless {
           SelectiveWidget(),
           HomeAccountWidget(),
           HomeYangLaoWidget(),
-          HomeLifeWidget(),
           HomeHoseWidget(),
+          HomeLifeWidget(),
+          HomeBottomWidget(),
         ],
       ),
     );
