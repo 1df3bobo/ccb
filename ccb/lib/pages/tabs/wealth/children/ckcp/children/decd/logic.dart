@@ -19,6 +19,5 @@ class DecdLogic extends GetxController {
 
   // 立即存入按钮点击
   void onDepositClick() {
-    Get.snackbar('提示', '立即存入功能开发中');
   }
 } 
