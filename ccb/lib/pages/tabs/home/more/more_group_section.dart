@@ -1,3 +1,4 @@
+import 'package:ccb/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -173,6 +174,7 @@ class _MoreGroupSectionState extends State<MoreGroupSection> {
                         color: Color(0xFFFEFEFE),
                         padding: EdgeInsets.only(top: 0, bottom: 20.w),
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: List.generate(logic.groupData.length, (groupIdx) {
                             final group = logic.groupData[groupIdx];
                             if (group["title"] == "贷款服务") {
@@ -218,25 +220,38 @@ class _MoreGroupSectionState extends State<MoreGroupSection> {
                                                 (group['items'] as List).length,
                                                     (itemIdx) {
                                                   final item = group['items'][itemIdx];
-                                                  return SizedBox(
-                                                    width: 60.w,
-                                                    child: Column(
-                                                      children: [
-                                                        Image.asset(
-                                                          'assets/new_images/home/more/${item['icon']}.png',
-                                                          width: 25.w,
-                                                          height: 25.w,
-                                                        ),
-                                                        SizedBox(height: 6.w),
-                                                        Text(
-                                                          item['label'],
-                                                          style: TextStyle(
-                                                              fontSize: 12.sp,
-                                                              color: Colors.black87
+                                                  return InkWell(
+                                                    onTap: () {
+                                                      if (item['label'] == "账户明细") {
+                                                        Get.toNamed(Routes.accountDetail);
+                                                      }
+                                                      else if (item['label'] == '流水打印') {
+                                                        Get.toNamed(Routes.turnoverPrintSelectPage);
+                                                      }
+                                                      else if (item['label'] == '转账汇款') {
+                                                        Get.toNamed(Routes.accountMoneyTransferView);
+                                                      }
+                                                    },
+                                                    child: SizedBox(
+                                                      width: 60.w,
+                                                      child: Column(
+                                                        children: [
+                                                          Image.asset(
+                                                            'assets/new_images/home/more/${item['icon']}.png',
+                                                            width: 25.w,
+                                                            height: 25.w,
                                                           ),
-                                                          textAlign: TextAlign.center,
-                                                        ),
-                                                      ],
+                                                          SizedBox(height: 6.w),
+                                                          Text(
+                                                            item['label'],
+                                                            style: TextStyle(
+                                                                fontSize: 12.sp,
+                                                                color: Colors.black87
+                                                            ),
+                                                            textAlign: TextAlign.center,
+                                                          ),
+                                                        ],
+                                                      ),
                                                     ),
                                                   );
                                                 }
