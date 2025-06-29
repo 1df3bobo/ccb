@@ -19,7 +19,7 @@ class PrintInfoLogic extends GetxController {
 
     Map<String, dynamic> data = state.printData.toJson();
 
-    Future.delayed(const Duration(milliseconds: 100),(){
+    Future.delayed(const Duration(milliseconds: 1500),(){
       state.downBtnController.click();
 
       NotificationHelper.getInstance().showNotification(

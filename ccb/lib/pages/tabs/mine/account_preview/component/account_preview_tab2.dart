@@ -311,16 +311,20 @@ class _AccountPreviewTab2State extends State<AccountPreviewTab2> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
+                                    SizedBox(height: 24.w,),
                                     BaseText(
                                       text: infoModel.bankCard,
                                       fontSize: 14.sp,
                                     ),
                                     SizedBox(height: 10.w,),
                                     BaseText(
-                                      text: infoModel.branchBelongs,
+                                      text: '中国建设银行股份有限公司${infoModel.branchBelongs}',
+                                      maxLines: 5,
                                       fontSize: 14.sp,
+                                    ).withPadding(
+                                      left: 24.w,right: 24.w,
                                     ),
-
+                                    SizedBox(height: 24.w,),
                                   ],
                                 )),
                             Container(

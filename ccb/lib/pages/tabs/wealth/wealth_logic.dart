@@ -11,8 +11,8 @@ class WealthLogic extends GetxController {
   final WealthState state = WealthState();
 
   // 添加一个新的变量来管理眼睛图标的状态
-  final isEyeOpen = true.obs;
-  final reloadShow = true.obs;
+  final isEyeOpen = false.obs;
+  final reloadShow = false.obs;
   void toggleEyeState() {
     isEyeOpen.value = !isEyeOpen.value;
     reloadShow.value = isEyeOpen.value;

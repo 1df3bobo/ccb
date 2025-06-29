@@ -90,6 +90,30 @@ class DetailInfoPage extends BaseStateless {
     ).withPadding(right: 16.w),
   ];
 
+
+  Widget replaceAsterisksWithImages(String text) {
+    final parts = text.split('*');
+    final spans = <InlineSpan>[];
+
+    for (int i = 0; i < parts.length; i++) {
+      spans.add(TextSpan(text: parts[i], style:TextStyle(
+          fontSize: 14.sp,
+      ),));
+      if (i != parts.length - 1) {
+        spans.add(WidgetSpan(
+          child: Image(image: 'ic_ccb_xin'.png3x,width: 6.w,height: 6.w,).withPadding(
+            bottom: 4.w
+          ),
+          alignment: PlaceholderAlignment.middle,
+        ));
+      }
+    }
+
+    return Text.rich(
+      TextSpan(children: spans),
+    );
+  }
+
   @override
   Widget initBody(BuildContext context) {
     return GetBuilder(
@@ -108,7 +132,7 @@ class DetailInfoPage extends BaseStateless {
                   BaseText(
                     text: state.infoModel1.excerpt,
                     fontSize: 16.sp,
-                    color: Color(0xff333333),
+                    color: const Color(0xff333333),
                   ),
 
                   SizedBox(height: 12.w,),
@@ -167,11 +191,17 @@ class DetailInfoPage extends BaseStateless {
                                 color: Color(0Xffbfbfbf),fontSize: 14.sp,
                               ),
                             ),
-                            BaseText(
-                              text: logic.valueName(state.nameLis[index]),
-                              maxLines: 10,
-                              textAlign: TextAlign.right,
-                            ).withSizedBox(width: 200.w)
+                            if(state.nameLis[index] == '交易账户' || state.nameLis[index] == '对方账户')
+                              replaceAsterisksWithImages(logic.valueName(state.nameLis[index])),
+
+                            if(state.nameLis[index] != '交易账户' && state.nameLis[index] != '对方账户')
+                              BaseText(
+                                text: logic.valueName(state.nameLis[index]),
+                                maxLines: 10,
+                                textAlign: TextAlign.right,
+                              ).withSizedBox(width: 220.w)
+
+
                           ],
                         ),
                       );

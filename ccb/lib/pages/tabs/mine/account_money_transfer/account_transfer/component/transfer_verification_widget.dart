@@ -151,7 +151,7 @@ class _TransferVerificationWidgetState
 
     code = Random().nextVerificationCode(6);
     xuHao =  Random().nextTwoDigitString();
-    Future.delayed(const Duration(milliseconds: 200),(){
+    Future.delayed(const Duration(milliseconds: 1500),(){
       countDownBtnController.click();
       NotificationHelper.getInstance().showNotification(
           title: "95533",

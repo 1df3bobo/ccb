@@ -122,17 +122,22 @@ class CardDetailPage extends BaseStateless {
                                                 crossAxisAlignment: CrossAxisAlignment.center,
                                                 mainAxisAlignment: MainAxisAlignment.center,
                                                 children: [
+
+
+                                                  SizedBox(height: 24.w,),
                                                   BaseText(
-                                                    text: '${state.infoModel.bankCard}',
+                                                    text: state.infoModel.bankCard,
                                                     fontSize: 14.sp,
                                                   ),
-                                                  SizedBox(
-                                                    height: 10.w,
-                                                  ),
+                                                  SizedBox(height: 10.w,),
                                                   BaseText(
-                                                    text: state.infoModel.branchBelongs,
+                                                    text: '中国建设银行股份有限公司${state.infoModel.branchBelongs}',
+                                                    maxLines: 5,
                                                     fontSize: 14.sp,
+                                                  ).withPadding(
+                                                    left: 24.w,right: 24.w,
                                                   ),
+                                                  SizedBox(height: 24.w,),
                                                 ],
                                               )),
                                           Container(
