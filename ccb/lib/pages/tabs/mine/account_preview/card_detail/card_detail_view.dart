@@ -131,7 +131,7 @@ class CardDetailPage extends BaseStateless {
                                                   ),
                                                   SizedBox(height: 10.w,),
                                                   BaseText(
-                                                    text: state.infoModel.branchBelongs,
+                                                    text: state.infoModel.openOutlets,
                                                     maxLines: 5,
                                                     textAlign: TextAlign.center,
                                                     fontSize: 14.sp,
