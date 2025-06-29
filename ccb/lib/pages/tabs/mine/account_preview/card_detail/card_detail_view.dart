@@ -166,7 +166,7 @@ class CardDetailPage extends BaseStateless {
                                                     color: Colors.blueAccent,
                                                   )),
                                                 ).withOnTap(onTap: () {
-                                                  logic.copyToClipboard('${state.infoModel.bankCard} ${state.infoModel.branchBelongs}');
+                                                  logic.copyToClipboard('${state.infoModel.bankCard} ${state.infoModel.openOutlets}');
                                                   SmartDialog.dismiss();
                                                 })),
                                                 Container(

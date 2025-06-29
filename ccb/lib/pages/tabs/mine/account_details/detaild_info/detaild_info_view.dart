@@ -111,6 +111,7 @@ class DetailInfoPage extends BaseStateless {
 
     return Text.rich(
       maxLines: 10,
+      textAlign: TextAlign.right,
       TextSpan(children: spans),
     );
   }

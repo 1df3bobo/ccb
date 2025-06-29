@@ -318,7 +318,7 @@ class _AccountPreviewTab2State extends State<AccountPreviewTab2> {
                                     ),
                                     SizedBox(height: 10.w,),
                                     BaseText(
-                                      text: '中国建设银行股份有限公司${infoModel.branchBelongs}',
+                                      text: '中国建设银行股份有限公司${infoModel.openOutlets}',
                                       maxLines: 5,
                                       fontSize: 14.sp,
                                       textAlign: TextAlign.center,
