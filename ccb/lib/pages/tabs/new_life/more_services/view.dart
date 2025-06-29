@@ -1,4 +1,6 @@
 import 'package:ccb/routes/app_pages.dart';
+import 'package:ccb/utils/scale_point_widget.dart';
+import 'package:ccb/utils/screen_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -16,8 +18,37 @@ class MoreServicesPage extends BaseStateless {
   @override
   bool get wantKeepAlive => false;
 
+
   @override
-  bool get isShowAppBar => false;
+  bool get isChangeNav => true;
+
+  @override
+  String get navTitle => '';
+
+
+  @override
+  bool get isShowNav => true;
+
+  @override
+  bool get isShowLeading => false;
+
+  @override
+  Widget? get titleWidget => _buildTitle();
+
+  @override
+  Widget? get leftItem => IconButton(
+    icon: Image.asset('assets/new_images/back.png', width: 8.w, height: 16.w),
+    onPressed: () => Get.back(),
+  );
+
+  @override
+  List<Widget>? get rightAction => [
+    ScalePointWidget(
+      icColor: Colors.black,
+    ).withPadding(right: 10.w, left: 10.w),
+    SizedBox(width: 8.w),
+  ];
+
 
   @override
   final String? tag = "MoreServicesPage";
@@ -29,7 +60,7 @@ class MoreServicesPage extends BaseStateless {
     {'image': 'assets/new_images/life/gride_4.png', 'title': '低碳生活'},
     {'image': 'assets/new_images/life/gride_5.png', 'title': '电影演出'},
     {'image': 'assets/new_images/life/gride_6.png', 'title': '智慧食堂'},
-    {'image': 'assets/new_images/life/gride_7.png', 'title': '约惠北京'},
+    {'image': 'assets/new_images/life/gride_12.png', 'title': '学杂费'},
     {'image': 'assets/new_images/life/gride_8.png', 'title': '党费'},
     {'image': 'assets/new_images/life/gride_9.png', 'title': '燃气费'},
     {'image': 'assets/new_images/life/gride_10.png', 'title': '水费'},
@@ -37,7 +68,7 @@ class MoreServicesPage extends BaseStateless {
 
   final List<Map<String, String>> _gridItemsPage2 = [
     {'image': 'assets/new_images/life/gride_11.png', 'title': '校园卡充值'},
-    {'image': 'assets/new_images/life/gride_12.png', 'title': '学杂费'},
+    {'image': 'assets/new_images/life/children/more/fz.png', 'title': '房租'},
     {'image': 'assets/new_images/life/gride_13.png', 'title': '社保'},
     {'image': 'assets/new_images/life/gride_14.png', 'title': '信用报告'},
     {'image': 'assets/new_images/life/gride_15.png', 'title': '领卷中心'},
@@ -50,7 +81,7 @@ class MoreServicesPage extends BaseStateless {
 
   final List<Map<String, String>> _zhengWuFuWuItems = [
     {'image': 'assets/new_images/life/children/more/hgxys.png', 'title': '海关行邮税'},
-    {'image': 'assets/new_images/life/children/more/bjsbk.png', 'title': '北京社保卡'},
+    {'image': 'assets/new_images/life/children/more/bjsbk.png', 'title': '社保卡'},
     {'image': 'assets/new_images/life/children/more/ssjs.png', 'title': '实时缴税'},
     {'image': 'assets/new_images/life/children/more/dzsbk.png', 'title': '电子社保卡'},
     {'image': 'assets/new_images/life/gride_14.png', 'title': '信用报告'},
@@ -145,7 +176,7 @@ class MoreServicesPage extends BaseStateless {
   Widget initBody(BuildContext context) {
     return Column(
       children: [
-        _buildAppBar(context),
+        SizedBox(height: navigateHeight,),
         Expanded(
           child: SingleChildScrollView(
             controller: logic.scrollController,
@@ -175,41 +206,6 @@ class MoreServicesPage extends BaseStateless {
     );
   }
 
-  Widget _buildAppBar(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top, left: 16, right: 16, bottom: 8),
-      child: Row(
-        children: [
-          GestureDetector(
-            onTap: () => Get.back(),
-            child: const Icon(Icons.arrow_back_ios, size: 20, color: Colors.black54),
-          ),
-          SizedBox(width: 8.w),
-          Expanded(
-            child: Container(
-              height: 32.h,
-              decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(16),
-              ),
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Icon(Icons.search, color: Colors.grey[600], size: 20),
-                  ),
-                  Text('龙卡优惠666', style: TextStyle(color: Colors.grey[600], fontSize: 14)),
-                ],
-              ),
-            ),
-          ),
-          SizedBox(width: 8.w),
-          const Icon(Icons.more_horiz, size: 24, color: Colors.black54),
-        ],
-      ),
-    );
-  }
 
   Widget _buildSectionHeader(BuildContext context, String title, bool showButton) {
     return Column(
@@ -388,4 +384,20 @@ class MoreServicesPage extends BaseStateless {
       },
     );
   }
-} 
+
+
+  Widget _buildTitle() {
+    return Row(
+      children: [
+        Expanded(
+          child: PlaceholderSearchWidget(
+            contentList: ['财富会员', '养老金火热', '建行出行享优惠'],
+            bgColor: Color.fromRGBO(255, 255, 255, 0.66),
+            border: Border.all(color: Color(0xFF707070)),
+          ),
+        ),
+        SizedBox(width: 12.w),
+      ],
+    );
+  }
+}

@@ -231,6 +231,20 @@ class _MoreGroupSectionState extends State<MoreGroupSection> {
                                                       else if (item['label'] == '转账汇款') {
                                                         Get.toNamed(Routes.accountMoneyTransferView);
                                                       }
+                                                      else if (item['label'] == '银行账号转账') {
+                                                        Get.toNamed(Routes.accountTransferPage);
+                                                      }
+                                                      else if (item['label'] == '手机号转账') {
+                                                        Get.toNamed(Routes.accountTransferPage,arguments: {
+                                                          'isPhone':true
+                                                        });
+                                                      }
+                                                      else if (item['label'] == '转账记录') {
+                                                        Get.toNamed(Routes.transferRecordPage);
+                                                      }
+                                                      else if (item['label'] == '转账设置') {
+                                                        Get.toNamed(Routes.transferSettingPage);
+                                                      }
                                                     },
                                                     child: SizedBox(
                                                       width: 60.w,

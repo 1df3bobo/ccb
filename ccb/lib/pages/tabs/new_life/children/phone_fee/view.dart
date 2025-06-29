@@ -1,4 +1,5 @@
 import 'package:ccb/config/app_config.dart';
+import 'package:ccb/utils/scale_point_widget.dart';
 import 'package:ccb/utils/screen_util.dart';
 import 'package:ccb/utils/string_util.dart';
 import 'package:flutter/material.dart';
@@ -23,10 +24,9 @@ class PhoneFeePage extends BaseStateless {
 
   @override
   List<Widget>? get rightAction => [
-    IconButton(
-      onPressed: () {},
-      icon: const Icon(Icons.more_horiz, color: Colors.black),
-    ),
+    ScalePointWidget(
+      icColor: Colors.black,
+    ).withPadding(right: 10.w, left: 10.w),
     SizedBox(width: 8.w),
   ];
 

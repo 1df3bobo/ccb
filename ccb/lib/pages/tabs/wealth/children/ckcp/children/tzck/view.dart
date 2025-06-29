@@ -30,19 +30,23 @@ class TzckView extends BaseStateless {
     onTap: () {
       Get.back();
     },
-    child: SizedBox(
-      width: 50,
-      height: 50,
+    child: Container(
+      height: 30,
+      width: 30,
     ),
   );
 
   @override
   Widget initBody(BuildContext context) {
     return Container(
-      child: Image.asset(
-        'assets/new_images/cai_fu/children/tktz.png',
-        width: double.infinity,
-        fit: BoxFit.fitWidth,
+      child: Column(
+        children: [
+          Image.asset(
+            'assets/new_images/cai_fu/children/tktz.png',
+            width: double.infinity,
+            fit: BoxFit.fitWidth,
+          ),
+        ],
       ),
     );
   }

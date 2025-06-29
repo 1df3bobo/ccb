@@ -21,7 +21,7 @@ class _LifeGridWidgetState extends State<LifeGridWidget> {
     {'image': 'assets/new_images/life/gride_4.png', 'title': '低碳生活'},
     {'image': 'assets/new_images/life/gride_5.png', 'title': '电影演出'},
     {'image': 'assets/new_images/life/gride_6.png', 'title': '智慧食堂'},
-    {'image': 'assets/new_images/life/gride_7.png', 'title': '约惠北京'},
+    {'image': 'assets/new_images/life/gride_12.png', 'title': '学杂费'},
     {'image': 'assets/new_images/life/gride_8.png', 'title': '党费'},
     {'image': 'assets/new_images/life/gride_9.png', 'title': '燃气费'},
     {'image': 'assets/new_images/life/gride_10.png', 'title': '水费'},
@@ -29,14 +29,14 @@ class _LifeGridWidgetState extends State<LifeGridWidget> {
 
   final List<Map<String, String>> _gridItemsPage2 = [
     {'image': 'assets/new_images/life/gride_11.png', 'title': '校园卡充值'},
-    {'image': 'assets/new_images/life/gride_12.png', 'title': '学杂费'},
+    {'image': 'assets/new_images/life/children/more/fz.png', 'title': '房租'},
     {'image': 'assets/new_images/life/gride_13.png', 'title': '社保'},
     {'image': 'assets/new_images/life/gride_14.png', 'title': '信用报告'},
     {'image': 'assets/new_images/life/gride_15.png', 'title': '领卷中心'},
     {'image': 'assets/new_images/life/gride_16.png', 'title': '固话话费'},
     {'image': 'assets/new_images/life/gride_17.png', 'title': '工会费'},
     {'image': 'assets/new_images/life/gride_18.png', 'title': '权益中心'},
-    {'image': 'assets/new_images/life/gride_19.png', 'title': '唯品会联...'},
+    {'image': 'assets/new_images/life/gride_19.png', 'title': '唯品会联合会员'},
     {'image': 'assets/new_images/life/gride_20.png', 'title': '更多'},
   ];
 

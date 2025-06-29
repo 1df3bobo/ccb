@@ -1,3 +1,4 @@
+import 'package:ccb/utils/scale_point_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -24,10 +25,9 @@ class CardServicesPage extends BaseStateless {
 
   @override
   List<Widget>? get rightAction => [
-        IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.more_horiz, color: Colors.black),
-        )
+    ScalePointWidget(
+      icColor: Colors.black,
+    ).withPadding(right: 10.w, left: 10.w),
       ];
 
   @override
