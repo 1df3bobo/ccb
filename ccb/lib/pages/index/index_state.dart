@@ -1,8 +1,8 @@
+import 'package:ccb/pages/tabs/new_life/view.dart';
 import 'package:flutter/cupertino.dart';
-
-import '../tabs/card/card_view.dart';
+import '../tabs/new_card/card_page/card_page/view.dart';
 import '../tabs/home/home_view.dart';
-import '../tabs/life/life_view.dart';
+// import '../tabs/life/life_view.dart'; // No longer needed
 import '../tabs/mine/mine_view.dart';
 import '../tabs/wealth/wealth_view.dart';
 
@@ -28,9 +28,10 @@ class IndexState {
 
     pageList = [
       HomePage(),
-      CardPage(),
+      CardPagePage(),
+
       WealthPage(),
-      LifePage(),
+      NewLifePage(),
       MinePage(),
     ];
 

@@ -29,6 +29,7 @@ extension WbObject on Object? {
 
 ///图片
 const String _assetImageDir = 'assets/images/';
+const String _assetNewImageDir = 'assets/new_images/';
 
 /// 资源操作
 extension AssetsStringExtension on String {
@@ -36,9 +37,13 @@ extension AssetsStringExtension on String {
 
   AssetImage get png => AssetImage('$_assetImageDir$this.png');
 
-  String get imgPath => '$_assetImageDir$this';
-}
+  AssetImage get newPng => AssetImage('$_assetNewImageDir$this.png');
 
+  String get imgPath => '$_assetImageDir$this';
+
+  String get newImgPath => '$_assetNewImageDir$this';
+
+}
 
 extension CustomWidgetExtensions on Widget {
   Widget withPadding({

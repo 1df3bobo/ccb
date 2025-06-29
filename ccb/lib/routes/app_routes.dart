@@ -98,10 +98,75 @@ class Routes {
   static const detailMoreTimePage = '/detailMoreTimePage';
 
   static const Jh_ydzdPage = '/Jh_ydzdPage';
-  static const saoyisaoPage = '/saoyisao';
+  static const saoyisaoPage = '/saoyisaoPage';
   static const mineReceiptPage = '/MineReceiptPage';
   static const sendMessagePage = '/sendMessagePage';
   static const sealSelectView = '/sealSelectView';
   static const sealReviewPage = '/sealReviewPage';
   static const mainEAccountPage = '/mainEAccountPage';
+  static const cardPackage = '/cardPackage';
+  static const installmentInquiry = '/installmentInquiry';
+  static const cardServices = '/cardServices';
+
+  static const dianFei = '/dianFei';
+  static const phoneFee = '/phoneFee';
+  static const diTanLife = '/diTanLife';
+
+  static const movie = '/movie';
+
+  static const yueHuiBeiJing = '/yueHuiBeiJing';
+
+  static const feeUnitSelection = '/feeUnitSelection';
+
+  static const jianHangLife = '/jianHangLife';
+
+  static const ranQiFee = '/ranQiFee';
+
+  static const sheBao = '/sheBao';
+
+  static const lingJuanZhongXin = '/lingJuanZhongXin';
+
+  static const quanYiZhongXin = '/quanYiZhongXin';
+
+  static const lianHeHuiYuanShouQuan = '/lianHeHuiYuanShouQuan';
+
+  static const moreServices = '/moreServices';
+
+  static const NewLife = '/new_life';
+
+  static const String lccp = '/wealth/lccp';
+
+  static const String lc = '/wealth/lc';
+
+  static const String jjtz = '/wealth/jjtz';
+
+  static const String bx = '/wealth/bx';
+
+  static const String gjs = '/wealth/gjs';
+
+  static const String jhyx = '/wealth/jhyx';
+
+  static const String lqb1 = '/wealth/lqb1';
+
+  static const String lqb2 = '/wealth/lqb2';
+
+  static const String sy = '/wealth/sy';
+
+  static const String more = '/wealth/more';
+
+  static const String ckcp = '/wealth/ckcp';
+
+  static const String dqck = '/wealth/dqck';
+
+  static const String decd = '/wealth/decd';
+
+  static const String tzck = '/wealth/tzck';
+
+  static const String tsck = '/wealth/tsck';
+
+  static const String jgxck = '/wealth/jgxck';
+
+  static const String sm = '/wealth/jgxck/sm';
+
+  static const String homeMore = '/home/more';
 }

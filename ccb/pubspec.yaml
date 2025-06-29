@@ -67,7 +67,7 @@ dependencies:
   permission_handler: any
   path_provider: ^2.1.5  # 用于获取本地文件路径（可选）
   d_chart: 2.8.0
-  syncfusion_flutter_charts: 27.2.5
+  syncfusion_flutter_charts: 29.2.11
 #  image_gallery_saver: 1.7.1
 #  gallery_saver: 2.3.2
 #  gallery_saver_plus: ^3.2.4
@@ -128,9 +128,31 @@ flutter:
   assets:
     - assets/images/
     - assets/images/temp/
-
+    - assets/images/card/
+    - assets/icon/
+    - assets/new_images/
+    - assets/new_images/card/
+    - assets/new_images/card/card_package/
+    - assets/new_images/card/card_services/
+    - assets/new_images/card/edu_change/
+    - assets/new_images/card/fen_qi_cha/
+    - assets/new_images/card/fen_qi_tong/
+    - assets/new_images/life/
+    - assets/new_images/life/children/
+    - assets/new_images/life/children/more/
+    - assets/new_images/cai_fu/
+    - assets/new_images/cai_fu/children/
+    - assets/new_images/cai_fu/children/jjtz/
+    - assets/new_images/cai_fu/children/bx/
+    - assets/new_images/cai_fu/children/gjs/
+    - assets/new_images/cai_fu/children/more/
+    - assets/new_images/cai_fu/children/ckcp/
+    - assets/new_images/cai_fu/children/dqck/
+    - assets/new_images/cai_fu/children/decd/
+    - assets/new_images/cai_fu/children/jgxck/
+    - assets/new_images/home/more/
   # An image asset can refer to one or more resolution-specific "variants", see
-  # https://flutter.dev/to/resolution-aware-images
+  # https://flutter.dev/assets-and-images/#resolution-aware
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/to/asset-from-package

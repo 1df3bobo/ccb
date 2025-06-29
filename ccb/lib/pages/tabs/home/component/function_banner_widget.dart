@@ -44,17 +44,10 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
     print(name);
     switch (name) {
       case '存款产品':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '存款产品',
-          'image': 'bg_ckcp',
-          'rightItem':'0'
-        });
+        Get.toNamed(Routes.ckcp);
         return;
       case '基金投资':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '基金投资',
-          'image': 'bg_jjtz',
-        });
+        Get.toNamed(Routes.jjtz);
         return;
       case '流水打印':
         Get.toNamed(
@@ -77,11 +70,7 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
         });
         return;
       case '龙钱包1号':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '龙钱包1号',
-          'image': 'bg_lqb1h',
-          'defTitleColor': Colors.black
-        });
+        Get.toNamed(Routes.lqb1);
         return;
       case '个人养老金':
         Get.toNamed(Routes.changeNavPage, arguments: {
@@ -108,10 +97,7 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
         });
         return;
       case '实物贵金属':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '实物贵金属',
-          'image': 'bg_guijins',
-        });
+        Get.toNamed(Routes.gjs);
         return;
       case '积分汇':
         Get.toNamed(Routes.minePointsPage);
@@ -126,10 +112,7 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
       case '网点服务':
         return;
       case '保险':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '保险',
-          'image': 'bg_baoxian',
-        });
+        Get.toNamed(Routes.bx);
         return;
       case '现金转出':
         return;
@@ -145,13 +128,10 @@ class _FunctionBannerWidgetState extends State<FunctionBannerWidget> {
         });
         return;
       case '更多':
-        Get.toNamed(Routes.gengduo);
+        Get.toNamed(Routes.homeMore);
         return;
       case '理财产品':
-        Get.toNamed(Routes.changeNavPage, arguments: {
-          'title': '理财产品',
-          'image': 'bg_lccp',
-        });
+        Get.toNamed(Routes.lccp);
         return;
       case '分期通':
         Get.toNamed(Routes.fixedNavPage, arguments: {

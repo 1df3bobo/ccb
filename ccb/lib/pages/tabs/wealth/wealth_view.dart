@@ -146,11 +146,7 @@ class WealthPage extends BaseStateless {
                   ),
                 ],
               )),
-          Container(
-            height: 169.w,
-            color: Colors.transparent,
-            child: Image(image: ('weal_items').png3x),
-          ),
+          _buildGridPage(state.gridItems),
           Container(
             //margin: EdgeInsets.only(top: 0.w),
             height: 336.w,
@@ -179,4 +175,55 @@ class WealthPage extends BaseStateless {
       ),
     );
   }
+
+
+
+  Widget _buildGridPage(List<Map<String, String>> items) {
+    return SizedBox(
+      height: 130,
+      child: GridView.builder(
+        physics: const NeverScrollableScrollPhysics(),
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 5,
+          childAspectRatio: 1.0,
+          mainAxisSpacing: 0.0,
+          crossAxisSpacing: 0.0,
+          mainAxisExtent: 60,
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        itemCount: items.length,
+        itemBuilder: (context, index) {
+          final item = items[index];
+          return GestureDetector(
+            onTap: () {
+              // 使用统一的产品点击事件处理方法
+              logic.onProductClick(item['label']!);
+            },
+            child: Center(
+              child: Container(
+                alignment: Alignment.center,
+                height: 63,
+                width: 60,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(item['image']!, width: 30, height: 30),
+                    SizedBox(height: 3,),
+                    Text(
+                      item['label']!,
+                      style: const TextStyle(fontSize: 11, color: Colors.black87),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
+
 }

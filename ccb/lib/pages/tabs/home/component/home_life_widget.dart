@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
 import 'package:wb_base_widget/extension/widget_extension.dart';
-
-import '../../../../routes/app_pages.dart';
 
 class HomeLifeWidget extends StatefulWidget {
   const HomeLifeWidget({super.key});
@@ -16,43 +12,11 @@ class HomeLifeWidget extends StatefulWidget {
 class _HomeLifeWidgetState extends State<HomeLifeWidget> {
   @override
   Widget build(BuildContext context) {
-    return _containerBg(
-      width: 350.w,
-      height: 232.w,
-      imagePath: 'bg_home_life',
-      child: Container(
-        padding: EdgeInsets.only(top: 45.w,bottom: 10.w),
-        child: Row(
-          children: [
-            Expanded(child: Container().withOnTap(onTap: (){
-              Get.toNamed(Routes.fixedNavPage, arguments: {
-                'title': '主会场',
-                'image': 'cfhd_1',
-              });
-            })),
-
-            Expanded(child: Column(
-              children: [
-                Expanded(child: Container().withOnTap(onTap: (){
-                  Get.toNamed(Routes.changeNavPage, arguments: {
-                    'title': '',
-                    'image': 'honme_hsq',
-                  });
-                })),
-                Expanded(child: Container().withOnTap(onTap: (){
-                  Get.toNamed(Routes.fixedNavPage, arguments: {
-                    'title': '善融一元购 好物1元尝鲜',
-                    'image': 'home_1y',
-                    'rightItem':"1"
-                  });
-                })),
-              ],
-            )),
-          ],
-        ),
-      ),
+    return Padding(padding: EdgeInsets.only(left: 0.w,right: 0.w),
+      child: _containerBg(width: 350.w, height: 232.w, imagePath: 'bg_home_life'),
     );
   }
+
 
   Widget _containerBg({
     required double width,
@@ -60,12 +24,20 @@ class _HomeLifeWidgetState extends State<HomeLifeWidget> {
     required String imagePath,
     BoxFit fit = BoxFit.fill,
     Widget? child,
-  }) {
+  }){
     return Container(
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: const Color(0xffF2FBFD),
+        borderRadius: BorderRadius.circular(12.w),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xffF6FCFF).withOpacity(0.2),
+            blurRadius: 12,
+            spreadRadius: 0.5,
+            offset: const Offset(0, 1),
+          ),
+        ],
         image: DecorationImage(
           image: imagePath.png3x,
           fit: fit,

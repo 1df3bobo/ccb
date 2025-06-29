@@ -38,7 +38,7 @@ abstract class BaseStateless extends StatelessWidget  with StateWidgetConfig {
         title:titleWidget??BaseText(
             text: title??'',
             fontSize: 18.sp,
-            color:  titleColor ?? Colors.black),
+            color:  navTitleColor ?? titleColor ?? Colors.black),
         backgroundColor:  navColor ?? Colors.white,
         elevation: 0,
         centerTitle: true,
@@ -46,7 +46,7 @@ abstract class BaseStateless extends StatelessWidget  with StateWidgetConfig {
         leadingWidth:lefItemWidth,
         leading:  leftItem??(isBack()?const SizedBox.shrink():InkWell(
             child: Padding(padding: EdgeInsets.only(left: 10.w),
-              child: Icon(Icons.navigate_before,size: 30.h,color: backColor,),
+              child: Icon(Icons.navigate_before,size: 30.h,color: leadingColor ?? backColor,),
             ),
             onTap: ()  => backCallBack == null ?_popThis(context): backCallBack?.call()
         )),

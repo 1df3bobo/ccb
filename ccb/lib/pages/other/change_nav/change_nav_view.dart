@@ -23,41 +23,22 @@ class ChangeNavPage extends BaseStateless {
   Color? get navColor => Get.arguments?['navColor'] ?? Colors.white;
 
   @override
-  List<Widget>? get rightAction => _rightItem();
+  List<Widget>? get rightAction => [
 
+    Obx(()=>ScalePointWidget(
+      icColor: logic.navActionColor.value,
+    ).withPadding(right: 6.w),),
 
-  List<Widget> _rightItem(){
-    if(Get.arguments?['rightItem']  == '0') return [];
-    if(Get.arguments?['rightItem']  == '1'){
-
-      return [
-        Obx(
-              () => ScalePointWidget(
-            icColor: logic.navActionColor.value,
-                left: 80.w,
-                dx: 40.w,
-                dy: 10.w,
-          ).withPadding(right: 20.w),
-        ),
+    
+        Obx(()=> Icon(
+          Icons.clear,
+          color: logic.navActionColor.value,
+        ).withOnTap(onTap: () {
+          Get.back();
+        }).withPadding(
+          right: 16.w,
+        ))
       ];
-    }
-
-    return [
-      Obx(
-            () => ScalePointWidget(
-          icColor: logic.navActionColor.value,
-        ).withPadding(right: 6.w),
-      ),
-      Obx(() => Icon(
-        Icons.clear,
-        color: logic.navActionColor.value,
-      ).withOnTap(onTap: () {
-        Get.back();
-      }).withPadding(
-        right: 16.w,
-      ))
-    ];
-  }
 
   @override
   Widget? get leftItem => InkWell(

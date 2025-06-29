@@ -15,6 +15,37 @@ import 'package:ccb/pages/tabs/mine/person_info/person_info/khinfo/khinfo/khinfo
 import 'package:ccb/pages/tabs/mine/person_info/person_info/person_info_view.dart';
 import 'package:ccb/pages/tabs/mine/person_info/person_info/zhgk/zhgk/zhgk_view.dart';
 import 'package:ccb/pages/tabs/mine/print_record/print_record_view.dart';
+import 'package:ccb/pages/tabs/new_life/children/dian_fei/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/di_tan_life/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/movie/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/phone_fee/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/yue_hui_bei_jing/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/fee_unit_selection/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/jian_hang_life/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/ran_qi_fee/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/she_bao/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/ling_juan_zhong_xin/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/quan_yi_zhong_xin/view.dart';
+import 'package:ccb/pages/tabs/new_life/children/lian_he_hui_yuan_shou_quan/view.dart';
+import 'package:ccb/pages/tabs/new_life/more_services/view.dart';
+import 'package:ccb/pages/tabs/new_life/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/lccp/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/lc/lc_page.dart';
+import 'package:ccb/pages/tabs/wealth/children/jjtz/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/bx/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/gjs/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/jhyx/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/lqb1/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/lqb2/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/sy/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/more/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/ckcp_page.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/children/dqck/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/children/decd/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/children/tzck/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/children/tsck/view.dart';
+import 'package:ccb/pages/tabs/wealth/children/ckcp/children/jgxck/view.dart';
+import 'package:ccb/pages/tabs/home/more/more_view.dart' as HomeMore;
 import 'package:get/get_navigation/src/routes/get_route.dart';
 import '../pages/account/login/login_view.dart';
 import '../pages/index/index_view.dart';
@@ -69,7 +100,13 @@ import '../pages/tabs/mine/turnover_print/print_info/print_info_view.dart';
 import '../pages/tabs/mine/turnover_print/print_result/print_result_view.dart';
 import '../pages/tabs/mine/turnover_print/turnover_print_view.dart';
 import '../pages/tabs/mine/turnover_print_select/turnover_print_select_view.dart';
+import 'package:ccb/pages/tabs/new_card/card_package/view.dart';
+import 'package:ccb/pages/tabs/new_card/card_services/view.dart';
+import 'package:ccb/pages/tabs/new_card/fen_qi_cha/view.dart';
+import 'package:ccb/pages/tabs/new_card/fen_qi_tong/view.dart';
+import 'package:get/get.dart';
 
+import '../pages/tabs/wealth/children/ckcp/children/sm/view.dart';
 part 'app_routes.dart';
 
 class AppPages {
@@ -204,6 +241,18 @@ class AppPages {
       page: () => TargetPage(),
     ),
     GetPage(
+      name: Routes.cardPackage,
+      page: () => CardPackagePage(),
+    ),
+    GetPage(
+      name: Routes.installmentInquiry,
+      page: () => InstallmentInquiryPage(),
+    ),
+    GetPage(
+      name: Routes.cardServices,
+      page: () => CardServicesPage(),
+    ),
+    GetPage(
       name: Routes.kuaijiezhifu,
       page: () => KjzfPage(),
     ),
@@ -211,7 +260,6 @@ class AppPages {
       name: Routes.detailInfoPage,
       page: () => DetailInfoPage(),
     ),
-    GetPage(name: Routes.naviOffset, page: () => NaviOffsetPage()),
     GetPage(name: Routes.transferRecordPage, page: () => TransferRecordPage()),
     GetPage(name: Routes.transferDetailPage, page: () => TransferDetailPage()),
     GetPage(name: Routes.transferPagePage, page: () => TransferPagePage()),
@@ -230,23 +278,22 @@ class AppPages {
       name: Routes.khinfo,
       page: () => KhinfoPage(),
     ),
-    GetPage(name: Routes.transferSettingPage, page: () => TransferSettingPage()),
     GetPage(name: Routes.bankListPage, page: () => BankListPage()),
     GetPage(name: Routes.contactsListPage, page: () => ContactsListPage()),
-    GetPage(name: Routes.proveApplicationPage, page: () => ProveApplicationPage()),
+    GetPage(
+        name: Routes.proveApplicationPage, page: () => ProveApplicationPage()),
     GetPage(name: Routes.transferResultPage, page: () => TransferResultPage()),
     GetPage(name: Routes.searchContentPage, page: () => SearchContentPage()),
     GetPage(name: Routes.printInfoPage, page: () => PrintInfoPage()),
     GetPage(name: Routes.printResultPage, page: () => PrintResultPage()),
     GetPage(name: Routes.printRecordPage, page: () => PrintRecordPage()),
     GetPage(name: Routes.printProgressPage, page: () => PrintProgressPage()),
-    GetPage(name: Routes.detailSearchListPage, page: () => DetailSearchListPage()),
+    GetPage(
+        name: Routes.detailSearchListPage, page: () => DetailSearchListPage()),
     GetPage(name: Routes.detailSearchPage, page: () => DetailSearchPage()),
     GetPage(name: Routes.bindPhonePage, page: () => BindPhonePage()),
     GetPage(name: Routes.personTransferPage, page: () => PersonTransferPage()),
-
     GetPage(name: Routes.yuedzdPage, page: () => YueduzdPage()),
-
     GetPage(name: Routes.sealPage, page: () => SealPage()),
     GetPage(name: Routes.sealSelectView, page: () => SealSelectView()),
     GetPage(name: Routes.sealReviewPage, page: () => SealReviewPage()),
@@ -259,6 +306,128 @@ class AppPages {
     GetPage(name: Routes.detailMoreTimePage, page: () => DetailMoreTimePage()),
     GetPage(name: Routes.mineReceiptPage, page: () => MineReceiptPage()),
     GetPage(name: Routes.sendMessagePage, page: () => SendMessagePage()),
-    GetPage(name: Routes.mainEAccountPage, page: () => MainEAccountPage())
+    GetPage(name: Routes.mainEAccountPage, page: () => MainEAccountPage()),
+    GetPage(
+      name: Routes.NewLife,
+      page: () => NewLifePage(),
+    ),
+    GetPage(
+      name: Routes.dianFei,
+      page: () => DianFeiPage(),
+    ),
+    GetPage(
+      name: Routes.phoneFee,
+      page: () => PhoneFeePage(),
+    ),
+    GetPage(
+      name: Routes.diTanLife,
+      page: () => DiTanLifePage(),
+    ),
+    GetPage(
+      name: Routes.movie,
+      page: () => MoviePage(),
+    ),
+    GetPage(name: Routes.yueHuiBeiJing, page: () => YueHuiBeiJingPage()),
+    GetPage(
+      name: Routes.feeUnitSelection,
+      page: () => FeeUnitSelectionPage(),
+    ),
+    GetPage(
+      name: Routes.jianHangLife,
+      page: () => JianHangLifePage(),
+    ),
+    GetPage(
+      name: Routes.ranQiFee,
+      page: () => RanQiFeePage(),
+    ),
+    GetPage(
+      name: Routes.sheBao,
+      page: () => SheBaoPage(),
+    ),
+    GetPage(
+      name: Routes.lingJuanZhongXin,
+      page: () => LingJuanZhongXinPage(),
+    ),
+    GetPage(
+      name: Routes.quanYiZhongXin,
+      page: () => QuanYiZhongXinPage(),
+    ),
+    GetPage(
+      name: Routes.lianHeHuiYuanShouQuan,
+      page: () => LianHeHuiYuanShouQuanPage(),
+    ),
+    GetPage(
+      name: Routes.moreServices,
+      page: () => MoreServicesPage(),
+    ),
+    GetPage(
+      name: Routes.lccp,
+      page: () => LccpPage(),
+    ),
+    GetPage(
+      name: Routes.lc,
+      page: () => LcPage(),
+    ),
+    GetPage(
+      name: Routes.jjtz,
+      page: () => JiJinTouZiMainPage(),
+    ),
+    GetPage(
+      name: Routes.bx,
+      page: () => BaoXianMainPage(),
+    ),
+    GetPage(
+      name: Routes.gjs,
+      page: () => GuiJinShuMainPage(),
+    ),
+    GetPage(
+      name: Routes.jhyx,
+      page: () => JianHangYanXuanPage(),
+    ),
+    GetPage(
+      name: Routes.lqb1,
+      page: () => Lqb1Page(),
+    ),
+    GetPage(
+      name: Routes.lqb2,
+      page: () => Lqb2Page(),
+    ),
+    GetPage(
+      name: Routes.sy,
+      page: () => SyPage(),
+    ),
+    GetPage(
+      name: Routes.more,
+      page: () => MorePage(),
+    ),
+    GetPage(
+      name: Routes.ckcp,
+      page: () => CkcpPage(),
+    ),
+    GetPage(
+      name: Routes.dqck,
+      page: () => DqckView(),
+    ),
+    GetPage(
+      name: Routes.decd,
+      page: () => DecdView(),
+    ),
+    GetPage(
+      name: Routes.tzck,
+      page: () => TzckView(),
+    ),
+    GetPage(
+      name: Routes.tsck,
+      page: () => TsckView(),
+    ),
+    GetPage(
+      name: Routes.jgxck,
+      page: () => JgxckView(),
+    ),
+    GetPage(
+      name: Routes.sm,
+      page: () => SMPage(),
+    ),
+    GetPage(name: Routes.homeMore, page: () => HomeMore.MorePage()),
   ];
 }

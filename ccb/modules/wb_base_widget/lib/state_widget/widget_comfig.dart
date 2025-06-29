@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pull_to_refresh_flutter3/pull_to_refresh_flutter3.dart';
 
 typedef BodyWidgetBuilder = Widget Function(BuildContext context);
 
@@ -22,7 +23,9 @@ mixin StateWidgetConfig {
 
   Color? get titleColor => null;
 
-  bool get bottomInset => true;
+  Color? get navTitleColor => null;
+
+  Color? get leadingColor => null;
 
   Color? get background => null;
 
@@ -34,11 +37,11 @@ mixin StateWidgetConfig {
 
   bool get isChangeNav => false;
 
+  bool get bottomInset => true;
+
   bool get noBackGround1 => true;
 
   Function(bool change)? get onNotificationNavChange => null;
-
-  dynamic get refreshController => null;
 
   void onRefresh() {}
 
@@ -50,6 +53,10 @@ mixin StateWidgetConfig {
   ///界面销毁
   void initDefaultDispose() {}
 
+  bool get extendBodyBehindAppBar => false;
 
+  RefreshController? get refreshController => null;
+
+  bool get onWillPop => true;
 
 }

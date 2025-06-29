@@ -3,6 +3,7 @@ import 'package:ccb/config/app_config.dart';
 import 'package:ccb/config/balance_config/balance_logic.dart';
 import 'package:ccb/config/dio/network.dart';
 import 'package:ccb/config/net_config/apis.dart';
+import 'package:ccb/utils/screen_util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
@@ -34,8 +35,7 @@ class CardDetailPage extends BaseStateless {
 
   @override
   Widget initBody(BuildContext context) {
-    final navHeight =
-        MediaQuery.of(context).padding.top + AppBar().preferredSize.height;
+    final navHeight = MediaQuery.of(context).padding.top + AppBar().preferredSize.height;
     return Column(
       children: [
         Container(
@@ -86,14 +86,15 @@ class CardDetailPage extends BaseStateless {
                           children: [
                             Row(
                               children: [
-                                GetBuilder(builder: (BalanceLogic c){
-                                  return BaseText(
-                                    text:c.cardInfo(),
-                                    style: TextStyle(
-                                        fontSize: 15.sp,
-                                        fontWeight: FontWeight.bold),
-                                  );
-                                },id: 'updateUI',),
+                                GetBuilder(
+                                  builder: (BalanceLogic c) {
+                                    return BaseText(
+                                      text: c.cardInfo(),
+                                      style: TextStyle(fontSize: 15.sp, fontWeight: FontWeight.bold),
+                                    );
+                                  },
+                                  id: 'updateUI',
+                                ),
                                 BaseText(
                                   text: '查看卡号',
                                   fontSize: 12.sp,
@@ -105,38 +106,31 @@ class CardDetailPage extends BaseStateless {
                                     builder: (_) {
                                       return Column(
                                         mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
+                                        crossAxisAlignment: CrossAxisAlignment.center,
                                         children: [
                                           Container(
                                               width: 1.sw * 0.88,
-                                              constraints: BoxConstraints(
-                                                  minHeight: 100.w),
+                                              constraints: BoxConstraints(minHeight: 100.w),
                                               decoration: BoxDecoration(
                                                 color: Colors.white,
                                                 borderRadius: BorderRadius.only(
-                                                  topRight:
-                                                      Radius.circular(8.w),
+                                                  topRight: Radius.circular(8.w),
                                                   topLeft: Radius.circular(8.w),
                                                 ),
                                               ),
                                               child: Column(
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.center,
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
+                                                crossAxisAlignment: CrossAxisAlignment.center,
+                                                mainAxisAlignment: MainAxisAlignment.center,
                                                 children: [
                                                   BaseText(
-                                                    text:
-                                                        '${state.infoModel.bankCard}',
+                                                    text: '${state.infoModel.bankCard}',
                                                     fontSize: 14.sp,
                                                   ),
                                                   SizedBox(
                                                     height: 10.w,
                                                   ),
                                                   BaseText(
-                                                    text: state.infoModel
-                                                        .branchBelongs,
+                                                    text: state.infoModel.branchBelongs,
                                                     fontSize: 14.sp,
                                                   ),
                                                 ],
@@ -150,10 +144,8 @@ class CardDetailPage extends BaseStateless {
                                             decoration: BoxDecoration(
                                               color: Colors.white,
                                               borderRadius: BorderRadius.only(
-                                                bottomRight:
-                                                    Radius.circular(8.w),
-                                                bottomLeft:
-                                                    Radius.circular(8.w),
+                                                bottomRight: Radius.circular(8.w),
+                                                bottomLeft: Radius.circular(8.w),
                                               ),
                                             ),
                                             height: 42.w,
@@ -168,15 +160,13 @@ class CardDetailPage extends BaseStateless {
                                                     color: Colors.blueAccent,
                                                   )),
                                                 ).withOnTap(onTap: () {
-                                                  logic.copyToClipboard(
-                                                      '${state.infoModel.bankCard} ${state.infoModel.branchBelongs}');
+                                                  logic.copyToClipboard('${state.infoModel.bankCard} ${state.infoModel.branchBelongs}');
                                                   SmartDialog.dismiss();
                                                 })),
                                                 Container(
                                                   width: 0.5.w,
                                                   height: 42.w,
-                                                  color:
-                                                      const Color(0xffbbbbab),
+                                                  color: const Color(0xffbbbbab),
                                                 ),
                                                 Expanded(
                                                     child: Container(
@@ -186,8 +176,7 @@ class CardDetailPage extends BaseStateless {
                                                     color: Colors.blueAccent,
                                                   )),
                                                 ).withOnTap(onTap: () {
-                                                  logic.copyToClipboard(
-                                                      state.infoModel.bankCard);
+                                                  logic.copyToClipboard(state.infoModel.bankCard);
                                                   SmartDialog.dismiss();
                                                 })),
                                               ],
@@ -229,18 +218,17 @@ class CardDetailPage extends BaseStateless {
                                 ),
 
                                 Container(
-                                  decoration: BoxDecoration(
-                                      color: Color(0xff5489F0).withOpacity(0.2),
-                                      borderRadius: BorderRadius.all(Radius.circular(2.w))
-                                  ),
-                                  width: 22.w,height: 12.w,
-                                  child: BaseText(text: '正常',
+                                  decoration: BoxDecoration(color: Color(0xff5489F0).withOpacity(0.2), borderRadius: BorderRadius.all(Radius.circular(2.w))),
+                                  width: 22.w,
+                                  height: 12.w,
+                                  child: BaseText(
+                                    text: '正常',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Color(0xff5489F0),
                                         // height: 1,
-                                        fontSize: 9.sp
-                                    ),),
+                                        fontSize: 9.sp),
+                                  ),
                                 ),
                                 // Image(
                                 //   image: 'ic_bm_02'.png3x,
@@ -296,6 +284,119 @@ class CardDetailPage extends BaseStateless {
                       top: 12.w,
                     ),
                   ),
+                  Positioned(
+                      right: 5,
+                      bottom: 10,
+                      child: InkWell(
+                        onTap: () {
+                          SmartDialog.show(
+                            usePenetrate: false,
+                            clickMaskDismiss: false,
+                            builder: (_) {
+                              return Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                      width: 1.sw * 0.88,
+                                      constraints: BoxConstraints(minHeight: 100.w),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.only(
+                                          topRight: Radius.circular(8.w),
+                                          topLeft: Radius.circular(8.w),
+                                        ),
+                                      ),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.center,
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(horizontal: 16.sp, vertical: 16),
+                                            child: BaseText(
+                                              text: '本台设备不是您唯一绑定的设备，为保证您的资金安全，暂不支持扫码办服务。如需变更绑定设备，请点击下方“咨询客服”，输入“半绑定”关键词查看解决方案。',
+                                              maxLines: 100,
+                                              fontSize: 13.sp,
+                                              style: TextStyle(
+
+                                                height: 1.5
+                                              ),
+
+                                            ),
+                                          ),
+
+                                          SizedBox(
+                                            height: 10.w,
+                                          ),
+                                          BaseText(
+                                            text: state.infoModel.branchBelongs,
+                                            fontSize: 14.sp,
+                                          ),
+                                        ],
+                                      )),
+                                  Container(
+                                    width: 1.sw * 0.88,
+                                    height: 0.5.w,
+                                    color: const Color(0xffbbbbab),
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.only(
+                                        bottomRight: Radius.circular(8.w),
+                                        bottomLeft: Radius.circular(8.w),
+                                      ),
+                                    ),
+                                    height: 42.w,
+                                    width: 1.sw * 0.88,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              child: (const BaseText(
+                                                text: '返回',
+                                                color: Color(0xFF999999),
+                                              )),
+                                            ).withOnTap(onTap: () {
+                                              SmartDialog.dismiss();
+                                            })),
+                                        Container(
+                                          width: 0.5.w,
+                                          height: 42.w,
+                                          color: const Color(0xffbbbbab),
+                                        ),
+                                        Expanded(
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              child: (const BaseText(
+                                                text: '咨询客服',
+                                                color: Colors.blueAccent,
+                                              )),
+                                            ).withOnTap(onTap: () {
+                                              SmartDialog.dismiss();
+                                              Get.toNamed('/ccbCustomerPage');
+                                            })),
+                                      ],
+                                    ),
+                                  ),
+                                  Image(
+                                    image: 'ic_updata_close'.png3x,
+                                    width: 24.w,
+                                    height: 24.w,
+                                  ).withOnTap(onTap: () {
+                                    SmartDialog.dismiss();
+                                  }).withPadding(top: 25.w),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: const SizedBox(
+                          width: 60,
+                          height: 60,
+                        ),
+                      ))
                   // Positioned(
                   //     right: 0,
                   //     top: 0,
@@ -306,10 +407,7 @@ class CardDetailPage extends BaseStateless {
                   //     ))
                 ],
               ),
-            ).withContainer(
-                width: 1.sw,
-                color: const Color(0xff3A5ECC),
-                padding: EdgeInsets.only(top: 15.w, bottom: 15.w)),
+            ).withContainer(width: 1.sw, color: const Color(0xff3A5ECC), padding: EdgeInsets.only(top: 15.w, bottom: 15.w)),
             Container(
               color: Color(0xff3A5ECC),
               child: Container(
@@ -379,8 +477,7 @@ class CardDetailPage extends BaseStateless {
                                 height: 30.w,
                                 alignment: Alignment.center,
                                 decoration: BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(15.w)),
+                                  borderRadius: BorderRadius.all(Radius.circular(15.w)),
                                   color: const Color(0xffECF3FD),
                                 ),
                                 child: BaseText(
@@ -401,8 +498,7 @@ class CardDetailPage extends BaseStateless {
                               height: 50.w,
                               padding: EdgeInsets.only(left: 12.w),
                               child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   BaseText(
                                     text: "人民币",
@@ -414,8 +510,7 @@ class CardDetailPage extends BaseStateless {
                                   Row(
                                     children: [
                                       BaseText(
-                                        text: AppConfig.config.balanceLogic
-                                            .balance(),
+                                        text: AppConfig.config.balanceLogic.balance(),
                                         style: TextStyle(
                                           fontWeight: FontWeight.w600,
                                           fontSize: 17.sp,
@@ -443,10 +538,7 @@ class CardDetailPage extends BaseStateless {
                           children: [
                             BaseText(
                               text: "出入金剩余额度",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 17.sp,
-                                  color: const Color(0xff272829)),
+                              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 17.sp, color: const Color(0xff272829)),
                             ),
                             SizedBox(
                               height: 10.w,
@@ -556,7 +648,9 @@ class CardDetailPage extends BaseStateless {
                     //   width: 350.w,
                     //   fit: BoxFit.fitWidth,
                     // )
-                    SizedBox(height: 25.w,),
+                    SizedBox(
+                      height: 25.w,
+                    ),
                     Container(
                       height: 250.w,
                       decoration: BoxDecoration(
@@ -565,15 +659,18 @@ class CardDetailPage extends BaseStateless {
                           fit: BoxFit.fitWidth,
                         ),
                       ),
-                      child: Padding(padding: EdgeInsets.only(top: 45.w,bottom: 45.w),
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 45.w, bottom: 45.w),
                         child: Container(
-                          child:Column(
+                          child: Column(
                             children: [
-                              Expanded(child: Container(
-                                margin: EdgeInsets.only(left: 12.w,right: 12.w,bottom: 10.w),
+                              Expanded(
+                                  child: Container(
+                                margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 10.w),
                                 child: Row(
                                   children: [
-                                    Expanded(child: Container().withOnTap(onTap: (){
+                                    Expanded(
+                                        child: Container().withOnTap(onTap: () {
                                       Get.toNamed(Routes.turnoverPrintSelectPage);
                                     })),
                                     Expanded(child: Container()),
@@ -583,8 +680,9 @@ class CardDetailPage extends BaseStateless {
                                   ],
                                 ),
                               )),
-                              Expanded(child:  Container(
-                                margin: EdgeInsets.only(left: 12.w,right: 12.w,bottom: 10.w),
+                              Expanded(
+                                  child: Container(
+                                margin: EdgeInsets.only(left: 12.w, right: 12.w, bottom: 10.w),
                                 child: Row(
                                   children: [
                                     Expanded(child: Container()),
